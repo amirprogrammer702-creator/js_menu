@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav>ul{
+            display: flex;
+            flex: 1;
+            justify-content: space-around;
+        }
+        nav>ul>li{
+            list-style: none;
+        }
+        nav>ul>li>a{
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+         nav>ul>li>a:hover{
+            background-color: #a2a2a2;
+         }
+    </style>
+</head>
+<body>
+    <nav id="menu">
+       
+    </nav>
+    <script>
+        let navigation=document.querySelector("#menu");
+        let menuitem=["خانه", "محصولات", "درباره ما","مقالات"];
+        let unorderlist= document.createElement("ul");
+       for (let i = 0; i < menuitem.length; i++) {
+        let listitem=document.createElement("li");
+        let anchor=document.createElement("a");
+        anchor.textContent=menuitem[i];
+        anchor.href="#";
+        listitem.appendChild(anchor);
+        unorderlist.appendChild(listitem);
+       }
+       navigation.appendChild(unorderlist)
+
+    </script>
+</body>
+</html>

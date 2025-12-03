@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+    <style>
+        *{
+            margin:0 ;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            padding: 50px;
+            background-color: #333;
+        }
+        header>h1{
+            color: #fff;
+            text-align: center;
+        }
+        main{
+            display: flex;
+        }
+        main>aside{
+            flex:30%;
+            padding: 15px;
+            background-color: #999;
+            height: 150px;
+        }
+        main>aside>nav>ul{
+            list-style: none;
+        }
+        main>aside>nav>ul>li>a{
+            display: block;
+            padding: 5px;
+            color: #fff;
+        }
+        main>article{
+            padding: 15px;
+            background-color: #f2f2f2;
+            height: 150px;
+        }
+        main>article>p#citydesc{
+            margin-top: 10px;
+        }
+        footer{
+            padding: 30px;
+            background-color: #333;
+            color: #fff;
+        }
+        footer>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cities</h1>
+
+    </header>
+    <main>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="getcityinfo(0)">London</a></li>
+                    <li><a href="#" onclick="getcityinfo(1)">Paris</a></li>
+                    <li><a href="#" onclick="getcityinfo(2)">Tokyo</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <h2 id="cityname"></h2>
+            <p id="cityinfo"></p>
+
+            <p id="citydesc"></p>
+        </article>
+    </main>
+    <footer>
+        <p>Footer</p>
+    </footer>
+    <script>
+        let citytitle=document.getElementById("cityname");
+        let cinfo=document.querySelector("#cityinfo");
+        let cdesc=document.getElementById("citydesc");
+        let cities=[{
+            title:"London",
+            info: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.",
+            description:"At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. "
+        },
+        {
+            title:"Paris",
+            info: "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.",
+            description:"Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine."
+        },
+        {
+             title:"Tokyo",
+            info: "Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples.",
+            description:"The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. "
+        }
+    ];
+    function getcityinfo(para) {
+        citytitle.textContent=cities[para].title;
+        cinfo.textContent=cities[para].info;
+        cdesc.textContent=cities[para].description;
+    }
+    getcityinfo(0);
+        
+    </script>
+    
+</body>
+</html>

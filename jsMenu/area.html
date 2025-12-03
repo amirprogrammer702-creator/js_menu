@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="شعاع را وارد نمایید" id="radius"><br>
+    <button onclick="getarea()">مساحت</button>
+    <p id="resault"></p>
+
+
+    <script>
+        let r=document.getElementById("radius");
+        let myarea=document.getElementById("resault");
+
+        function calcarea() {
+            return Math.pow(r.value ,2) * Math.PI ;
+            
+        }
+        function getarea(){
+            myarea.textContent=calcarea();
+        }
+    </script>
+
+</body>
+</html>
